@@ -16,8 +16,8 @@ function sync_time() {
 }
 
 function check_config() {
-	[[ $KEYMAP =~ ^[0-9A-Za-z-]*$ ]] \
-		|| die "KEYMAP contains invalid characters"
+	[[ $KEYMAP =~ ^[0-9A-Za-z_-]*$ ]] \
+		|| die "KEYMAP contains invalid characters: $KEYMAP"
 
 	if [[ "$SYSTEMD" == "true" ]]; then
 		[[ "$STAGE3_BASENAME" == *systemd* ]] \
